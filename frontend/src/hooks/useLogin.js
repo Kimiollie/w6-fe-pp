@@ -15,7 +15,7 @@ export const useLogin = (setIsAuthenticated, email, password) => {
 
       if (response.ok) {
         const user = await response.json();
-        localStorage.setItem("user", JSON.stringify(user));
+        sessionStorage.setItem("user", JSON.stringify(user));
         console.log("User logged in successfully!");
         setIsAuthenticated(true);
         navigate("/");
